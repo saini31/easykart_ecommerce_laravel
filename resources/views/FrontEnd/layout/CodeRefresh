@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    <style>
+        .add-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+        <a class="navbar-brand" href="#">Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{route('cart')}}">Cart</a>
+                    <ul id="topMenu" class="nav pull-right">
+                        <li class=""><a href="{{route('specialOffer')}}">Specials Offer</a></li>
+                        <li class=""><a href="{{route('delivery')}}">Delivery</a></li>
+                        <li class=""><a href="{{route('contact')}}">Contact</a></li>
+                        <li class="">
+                            @if(Auth::user())
+                            <a href="{{route('user_logout')}}" ><span class="btn btn-large btn-success">Logout</span></a>
+                            @else
+                            <a href="{{route('user_login')}}" ><span class="btn btn-large btn-success">Login</span></a>
+                            @endif
+                        </li>
+                    </ul>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="goHome()">Home</a>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+
+    
